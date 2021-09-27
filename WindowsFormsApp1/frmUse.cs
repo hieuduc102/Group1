@@ -7,19 +7,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WindowsFormsApp1.Entities;
 namespace WindowsFormsApp1
 {
     public partial class frmUse : Form
     {
-        public frmUse()
+       
+            
+            Person person;
+            LichSuHocTap lichsu;
+
+        public frmUse(string idPerson = "1")
+            {
+                InitializeComponent();
+                person = Person.Get(idPerson);
+                if (person != null)
+                {
+                    //cah1
+                    //txtHoTen.Text = $"{person.LastName} {person.FirstName}";
+                    //cach2
+                    txtHoTen.Text = person.FullName;
+                    dtpNgaySinh.Value = person.DOB;
+                    if (person.Sex == Person.EGioiTinh.Nam)
+                        rdNam.Checked = true;
+                    else
+                        rdNu.Checked = true;
+
+                    txtQueQuan.Text = person.QueQuan;
+                }
+                var ls = LichSuHocTap.GetList();
+                lichSuHocTapBindingSource.DataSource = ls;
+                gridLichSu.DataSource = lichSuHocTapBindingSource.DataSource;
+            }
+
+        private void gridLichSu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            InitializeComponent();
+
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void picAvatar_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "File anh(*.png,*.jpg)|*.png;*.jpg";
+            dialog.Title = "Chon anh dai dien";
+            //var rs = dialog.ShowDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                var fileName = dialog.FileName;
+                picAvatar.ImageLocation = fileName;
+            }
         }
     }
+
+
+    
 }

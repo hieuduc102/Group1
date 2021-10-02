@@ -51,6 +51,8 @@ namespace WindowsFormsApp1
             this.lichSuHocTapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.ThuVienColor = new System.Windows.Forms.ColorDialog();
+            this.btcolor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLichSu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lichSuHocTapBindingSource)).BeginInit();
@@ -229,11 +231,22 @@ namespace WindowsFormsApp1
             this.label8.TabIndex = 10;
             this.label8.Text = "Quê quán";
             // 
+            // btcolor
+            // 
+            this.btcolor.Location = new System.Drawing.Point(28, 330);
+            this.btcolor.Name = "btcolor";
+            this.btcolor.Size = new System.Drawing.Size(75, 23);
+            this.btcolor.TabIndex = 11;
+            this.btcolor.Text = "đổi màu";
+            this.btcolor.UseVisualStyleBackColor = true;
+            this.btcolor.Click += new System.EventHandler(this.btcolor_Click);
+            // 
             // frmUse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btcolor);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.gridLichSu);
@@ -281,5 +294,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn diemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hanhKiemDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource lichSuHocTapBindingSource;
+        private System.Windows.Forms.ColorDialog ThuVienColor;
+        private System.Windows.Forms.Button btcolor;
     }
 }

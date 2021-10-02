@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Entities
 {
-    class Person
+    public class Person
     {
         /// <summary>
         /// Khóa chính

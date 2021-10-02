@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
        
             
             Person person;
-            LichSuHocTap lichsu;
+            LichSuHocTap ls;
 
         public frmUse(string idPerson = "1")
             {
@@ -55,6 +55,14 @@ namespace WindowsFormsApp1
             {
                 var fileName = dialog.FileName;
                 picAvatar.ImageLocation = fileName;
+            }
+        }
+
+        private void btcolor_Click(object sender, EventArgs e)
+        {
+            if (ThuVienColor.ShowDialog() == DialogResult.OK)
+            {
+                this.BackColor = ThuVienColor.Color;
             }
         }
     }

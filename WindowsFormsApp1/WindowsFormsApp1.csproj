@@ -46,8 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Faculty.cs" />
     <Compile Include="Entities\LichSuHocTap.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="frmkhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmkhoa.Designer.cs">
+      <DependentUpon>frmkhoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +67,18 @@
     <Compile Include="FrmManageUser.Designer.cs">
       <DependentUpon>FrmManageUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTet.Designer.cs">
+      <DependentUpon>frmTet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTimer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTimer.Designer.cs">
+      <DependentUpon>frmTimer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,11 +87,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmkhoa.resx">
+      <DependentUpon>frmkhoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmManageUser.resx">
       <DependentUpon>FrmManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTet.resx">
+      <DependentUpon>frmTet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTimer.resx">
+      <DependentUpon>frmTimer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUse.resx">
       <DependentUpon>frmUse.cs</DependentUpon>
@@ -86,6 +114,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\WindowsFormsApp1.Entities.Faculty.datasource" />
     <None Include="Properties\DataSources\WindowsFormsApp1.Entities.LichSuHocTap.datasource" />
     <None Include="Properties\DataSources\WindowsFormsApp1.Entities.Person.datasource" />
     <None Include="Properties\Settings.settings">
@@ -101,6 +130,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

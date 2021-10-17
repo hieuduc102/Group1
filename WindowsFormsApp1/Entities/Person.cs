@@ -40,6 +40,7 @@ namespace WindowsFormsApp1.Entities
                 return $"{LastName} {FirstName}";
             }
         }
+        public string IdFaculty { get; set; }
         public static List<Person> GetList()
         {
             var ls = new List<Person>();
@@ -50,26 +51,59 @@ namespace WindowsFormsApp1.Entities
                 LastName = "Nguyen",
                 DOB = new DateTime(2000, 2, 10),
                 QueQuan = "Quang Nam",
-                Sex = EGioiTinh.Nam
+                Sex = EGioiTinh.Nam,
+                IdFaculty="1"
             });
             ls.Add(new Person
             {
                 Id = "2",
-                FirstName = "asqư",
-                LastName = "a12",
+                FirstName = "Phủ",
+                LastName = "A",
                 DOB = new DateTime(2000, 5, 12),
-                QueQuan = "da nang",
-                Sex = EGioiTinh.Nam
+                QueQuan = "Sơn La",
+                Sex = EGioiTinh.Nam,
+                IdFaculty="2"
+            });
+            ls.Add(new Person
+            {
+                Id = "3",
+                FirstName = "Nở",
+                LastName = "Thị",
+                DOB = new DateTime(2000, 6, 30),
+                QueQuan = "Hà Nam",
+                Sex = EGioiTinh.Nu,
+                IdFaculty = "3"
             });
 
             return ls;
         }
+
+
+        /// <summary>
+        /// Lay ds sv cua 1 khoa
+        /// </summary>
+        /// <param name="idFaculty"> Ma kho can lay</param>
+        /// <returns>Ds sv cua khoa</returns>
+        public static List<Person> GetList(string idFaculty)
+        {
+            var ls = GetList();
+            var rs = ls.Where(e => e.IdFaculty == idFaculty).ToList();
+            return rs;
+        }
+
+        /// <summary>
+        /// Lay 1 sv tu csdl
+        /// </summary>
+        /// <param name="id">Ma sinh vien can lay</param>
+        /// <returns></returns>
         public static Person Get(string id)
         {
             var dbPerson = GetList();
             var person = dbPerson.Where(p => p.Id == id).FirstOrDefault();
             return person;
         }
+
+
 
         public enum EGioiTinh
         {

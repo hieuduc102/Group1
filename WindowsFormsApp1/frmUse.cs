@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
        
             
             Person person;
-            LichSuHocTap ls;
+            //LichSuHocTap ls;
 
         public frmUse(string idPerson = "1")
             {
